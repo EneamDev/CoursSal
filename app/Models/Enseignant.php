@@ -9,7 +9,7 @@ class Enseignant extends Model
 {
     use HasFactory;
 
-
+    protected $table='enseignant';
 
 
     protected $fillable = [
@@ -21,6 +21,18 @@ class Enseignant extends Model
 
 
     ];
+
+
+    public function ue()
+    {
+        return $this->belongsToMany(Ue::class, enseignant_ue);
+    }
+
+
+    public function programmation()
+    {
+        return $this->belongsTo(Programmation::class, enseignant_id);
+    }
 
 
 

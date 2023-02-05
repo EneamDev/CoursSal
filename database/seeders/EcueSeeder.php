@@ -15,5 +15,6 @@ class EcueSeeder extends Seeder
     public function run()
     {
         //
+
     }
 }
