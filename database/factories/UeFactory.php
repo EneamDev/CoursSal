@@ -18,14 +18,6 @@ class UeFactory extends Factory
     {
         return [
             //
-            'nom' => fake()->name(),
-
         ];
-
-
-
-
-
-
     }
 }

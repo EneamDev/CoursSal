@@ -15,8 +15,16 @@ return new class extends Migration
     {
         Schema::create('filiere_ue', function (Blueprint $table) {
             $table->id();
-            $table->integer('filiere_id')->unsigned();
-            $table->integer('ue_id')->unsigned();
+            $table->foreignId("filiere_id")
+            ->references("id")->on("filiere")
+            ->onDelete("cascade")
+            ->onUpdate("cascade");
+
+            $table->foreignId("ue_id")
+            ->references("id")->on("ue")
+            ->onDelete("cascade")
+            ->onUpdate("cascade");
+
             $table->timestamps();
         });
     }

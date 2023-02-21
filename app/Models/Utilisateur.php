@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class Utilisateur extends Authenticatable
+class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
@@ -17,16 +17,10 @@ class Utilisateur extends Authenticatable
      *
      * @var array<int, string>
      */
-
-    protected $table='utilisateur';
-
     protected $fillable = [
-        'nom',
+        'name',
         'email',
-        'role_id',
         'password',
-        'filiere_id',
-
     ];
 
     /**
@@ -47,26 +41,4 @@ class Utilisateur extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-
-    public function programmation()
-    {
-        return $this->belongsTo(Programmation::class, utilisateur_id);
-    }
-
-    public function roles()
-    {
-        return $this->belongsTo(Role::class, role_id);
-    }
-
-    public function permutationSalle()
-    {
-        return $this->belongsToMany(PermutationSalle::class, permutationSalle_utilisateur);
-    }
-
-    public function interruptions()
-    {
-        return $this->belongsToMany(Interruptions::class, utilisateur_id);
-    }
-
 }

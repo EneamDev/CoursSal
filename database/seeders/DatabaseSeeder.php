@@ -20,14 +20,5 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-//        \App\Models\Ecue::factory(1)->create(); //Added
-        \App\Models\Ue::factory(10)->create(); //Added
-//        \App\Models\Ecue::factory(10)->create(); //Added
-//        \App\Models\Utilisateur::factory(10)->create(); //Added
-
-//        $this->call(UeSeeder::class);
-
-
     }
 }

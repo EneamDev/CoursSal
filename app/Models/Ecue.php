@@ -9,18 +9,10 @@ class Ecue extends Model
 {
     use HasFactory;
 
-    protected $table='ecue';
-
     protected $fillable = [
         'nom',
-        'ue_id'
 
     ];
-
-    public function ue()
-    {
-        return $this->belongsTo(Ue::class, ue_id);
-    }
 
 
 }

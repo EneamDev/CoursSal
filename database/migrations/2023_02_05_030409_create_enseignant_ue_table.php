@@ -14,10 +14,23 @@ return new class extends Migration
     public function up()
     {
         Schema::create('enseignant_ue', function (Blueprint $table) {
+
             $table->id();
-            $table->integer('enseignant_id')->unsigned();
-            $table->integer('ue_id')->unsigned();
+
+            $table->foreignId("enseignant_id")
+            ->references("id")
+            ->on("enseignant")
+            ->onDelete("cascade")
+            ->onUpdate("cascade");
+
+            $table->foreignId("ue")
+            ->references("id")
+            ->on("ue")
+            ->onDelete("cascade")
+            ->onUpdate("cascade");
+
             $table->timestamps();
+            
         });
     }
 

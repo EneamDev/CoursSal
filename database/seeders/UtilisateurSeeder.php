@@ -15,7 +15,5 @@ class UtilisateurSeeder extends Seeder
     public function run()
     {
         //
-
-
     }
 }
