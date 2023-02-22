@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('utilisateur', function (Blueprint $table) {
+        Schema::create('utilisateurs', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('nom');
@@ -22,11 +22,11 @@ return new class extends Migration
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('filiere_id');
             $table->foreign('role_id')
-                ->references('id')->on('role')
+                ->references('id')->on('roles')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreign('filiere_id')
-                ->references('id')->on('filiere')
+                ->references('id')->on('filieres')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -40,6 +40,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('utilisateur');
+        Schema::dropIfExists('utilisateurs');
     }
 };

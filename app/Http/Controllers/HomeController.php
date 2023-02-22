@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Etudiant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view("utilisateurs.home");
+        return view("authentifications.connexion");
     }
 
     /**
@@ -81,4 +83,20 @@ class HomeController extends Controller
     {
         //
     }
+
+    //connexion étudiant
+    public function connexion(Request $request)
+    {
+        $matricule = $request->input('matricule');
+        $etudiant = Etudiant::where('matricule', $matricule)->first();
+
+        if (!$etudiant) {
+            return back()->withErrors(['matricule' => 'Matricule invalide.']);
+        }
+
+        Auth::login($etudiant);
+
+        return redirect('/connexion');
+    }
+
 }

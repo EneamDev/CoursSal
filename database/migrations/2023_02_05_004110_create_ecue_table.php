@@ -13,13 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('ecue', function (Blueprint $table) {
+        Schema::create('ecues', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
             $table->unsignedBigInteger('ue_id')->nullable();
             $table->foreign('ue_id')
                      ->references('id')
-                     ->on('ue')
+                     ->on('ues')
                      ->onDelete('cascade');
             $table->timestamps();
 
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ecue');
+        Schema::dropIfExists('ecues');
     }
 };

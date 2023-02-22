@@ -9,7 +9,7 @@
         <p class=" text-[#28AD81] text-xl w-fit mx-auto font-bold">Authentification</p>
         <span class="w-[8rem] mx-auto block h-[2px] bg-[#28AD81] "> </span>
         <!-- Email Address -->
-        <div>
+        <div class="mt-2">
             <x-input-label for="email" :value="__('Email')" />
             <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />

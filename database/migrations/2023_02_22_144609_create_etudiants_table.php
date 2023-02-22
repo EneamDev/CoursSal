@@ -13,17 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('filieres', function (Blueprint $table) {
+        Schema::create('etudiants', function (Blueprint $table) {
             $table->id();
+            $table->integer('matricule');
+            $table->string('nom');
+            $table->string('prenoms');
+            $table->string('email');
+            $table->integer('numero');
+            $table->date('dateNaissance');
             $table->timestamps();
-            $table->unsignedBigInteger('effectif');
-            $table->unsignedBigInteger('salle_id');
-
-            $table->foreign('salle_id')
-                ->references('id')->on('salles')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
-
         });
     }
 
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filieres');
+        Schema::dropIfExists('etudiants');
     }
 };

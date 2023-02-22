@@ -22,13 +22,13 @@ return new class extends Migration
             $table->time('heure_debut');
             $table->time('horaire_jour');
             $table->unsignedBigInteger('programmation_id');
-            $table->unsignedBigInteger('utilisateur_id');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('programmation_id')
-                ->references('id')->on('programmation')
+                ->references('id')->on('programmations')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->foreign('utilisateur_id')
-                ->references('id')->on('utilisateur')
+            $table->foreign('user_id')
+                ->references('id')->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 

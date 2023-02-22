@@ -14,11 +14,24 @@
                 <span class="text-[#28AD81] text-xl font-bold">COUR</span><span class="opacity-60 text-xl font-bold">SAL</span>
             </div>
             <div class=" w-3/4 hidden md:flex justify-around ">
-                <span class=""><i class=" py-2 text-xl mr-2 fa-solid fa-house-chimney opacity-60"></i>Accueil</span>  
+                <span class=""><i class=" py-2 text-xl mr-2 fa-solid fa-house-chimney opacity-60"></i>Accueil</span>
                 <span><i class=" py-2 text-xl mr-2 fa-solid fa-calendar-days opacity-60"></i>Emploi du temps</span>
-                <span class=""><i class=" py-2 text-xl mr-2 fa-solid fa-gear opacity-60"></i>Parametres</span>
-                <span><i class=" py-2 text-xl mr-2 fa-solid fa-right-from-bracket opacity-60"></i>Se deconnecter</span>  
-            </div> 
+                <span class=""><i class=" py-2 text-xl mr-2 fa-solid fa-gear opacity-60"></i>Parametres
+
+                </span>
+
+                <span><i class=" py-2 text-xl mr-2 fa-solid fa-right-from-bracket opacity-60"></i>
+                {{-- <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            <x-dropdown-link :href="route('logout')"
+                                             onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Se deconnecter') }}
+                            </x-dropdown-link>
+                        </form>--}}
+                </span>
+            </div>
         </header>
 
         <div class="card w-screen h-[88%] flex justify-center items-center">
