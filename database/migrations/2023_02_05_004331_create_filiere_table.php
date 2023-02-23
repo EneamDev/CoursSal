@@ -13,14 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('filiere', function (Blueprint $table) {
+        Schema::create('filieres', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('effectif');
             $table->unsignedBigInteger('salle_id');
 
             $table->foreign('salle_id')
-                ->references('id')->on('salle')
+                ->references('id')->on('salles')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filiere');
+        Schema::dropIfExists('filieres');
     }
 };

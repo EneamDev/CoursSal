@@ -13,24 +13,24 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('enseignant_ue', function (Blueprint $table) {
+        Schema::create('enseignants_ues', function (Blueprint $table) {
 
             $table->id();
 
             $table->foreignId("enseignant_id")
             ->references("id")
-            ->on("enseignant")
+            ->on("enseignants")
             ->onDelete("cascade")
             ->onUpdate("cascade");
 
             $table->foreignId("ue")
             ->references("id")
-            ->on("ue")
+            ->on("ues")
             ->onDelete("cascade")
             ->onUpdate("cascade");
 
             $table->timestamps();
-            
+
         });
     }
 
@@ -41,6 +41,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('enseignant_ue');
+        Schema::dropIfExists('enseignants_ues');
     }
 };

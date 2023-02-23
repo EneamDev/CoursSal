@@ -15,7 +15,7 @@ class UeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("ue")->insert([
+        DB::table("ues")->insert([
             [
                 'nom' => 'Java',
                 'created_at' => date("Y-m-d h:m:i"),

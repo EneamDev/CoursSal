@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('permutationSalle', function (Blueprint $table) {
+        Schema::create('permutation_salles', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->date('date_actuelle');
@@ -27,7 +27,7 @@ return new class extends Migration
             $table->string('salle_actuelle');
             $table->unsignedBigInteger('programmation_id');
             $table->foreign('programmation_id')
-                ->references('id')->on('programmation')
+                ->references('id')->on('programmations')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -44,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('permutationSalle');
+        Schema::dropIfExists('permutation_salles');
     }
 };

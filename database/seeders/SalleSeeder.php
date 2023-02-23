@@ -18,7 +18,7 @@ class SalleSeeder extends Seeder
     {
         //
         
-        DB::table("salle")->insert([
+        DB::table("salles")->insert([
             [
                 'nom' => 'Ireep',
                 'created_at' => date("Y-m-d h:m:i"),

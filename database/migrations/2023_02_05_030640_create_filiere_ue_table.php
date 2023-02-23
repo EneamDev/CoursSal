@@ -13,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('filiere_ue', function (Blueprint $table) {
+        Schema::create('filieres_ues', function (Blueprint $table) {
             $table->id();
             $table->foreignId("filiere_id")
-            ->references("id")->on("filiere")
+            ->references("id")->on("filieres")
             ->onDelete("cascade")
             ->onUpdate("cascade");
 
             $table->foreignId("ue_id")
-            ->references("id")->on("ue")
+            ->references("id")->on("ues")
             ->onDelete("cascade")
             ->onUpdate("cascade");
 
@@ -36,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('filiere_ue');
+        Schema::dropIfExists('filieres_ues');
     }
 };

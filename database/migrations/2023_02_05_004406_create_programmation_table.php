@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('programmation', function (Blueprint $table) {
+        Schema::create('programmations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->unsignedBigInteger('mh_tp');
@@ -24,21 +24,22 @@ return new class extends Migration
             $table->unsignedBigInteger('enseignant_id');
             $table->unsignedBigInteger('filiere_id');
             $table->foreign('enseignant_id')
-                ->references('id')->on('enseignant')
+                ->references('id')->on('enseignants')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+
             $table->foreign('filiere_id')
-                ->references('id')->on('filiere')
+                ->references('id')->on('filieres')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('utilisateur_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('ue_id');
-            $table->foreign('utilisateur_id')
-                ->references('id')->on('utilisateur')
+            $table->foreign('user_id')
+                ->references('id')->on('users')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreign('ue_id')
-                ->references('id')->on('ue')
+                ->references('id')->on('ues')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
 
@@ -56,6 +57,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('programmation');
+        Schema::dropIfExists('programmations');
     }
 };
