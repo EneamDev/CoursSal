@@ -62,7 +62,7 @@ Route::middleware('auth')->group(function () {
 });
 
 //Appel du controller de connexion des Etudiants
-Route::post('/connexion', [HomeController::class, 'connexion'])->name('connexion')->middleware(['auth']);
+Route::post('/connexion', [HomeController::class, 'connexion'])->name('connexion');
 
 
 

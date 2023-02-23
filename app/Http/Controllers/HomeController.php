@@ -94,9 +94,9 @@ class HomeController extends Controller
             return back()->withErrors(['matricule' => 'Matricule invalide.']);
         }
 
-        Auth::login($etudiant);
+        /*Auth::login($etudiant);*/
 
-        return redirect('/connexion');
+        return redirect('/dashboard');
     }
 
 }
