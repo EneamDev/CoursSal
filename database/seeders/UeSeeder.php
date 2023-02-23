@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UeSeeder extends Seeder
 {
@@ -14,6 +15,27 @@ class UeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table("ue")->insert([
+            [
+                'nom' => 'Java',
+                'created_at' => date("Y-m-d h:m:i"),
+                'updated_at' => date("Y-m-d h:m:i"),
+            ],
+            [
+                'nom' => 'Android',
+                'created_at' => date("Y-m-d h:m:i"),
+                'updated_at' => date("Y-m-d h:m:i"),
+            ],
+            [
+                'nom' => 'Comptabilité générale',
+                'created_at' => date("Y-m-d h:m:i"),
+                'updated_at' => date("Y-m-d h:m:i"),
+            ],
+            [
+                'nom' => 'Mathématiques générales',
+                'created_at' => date("Y-m-d h:m:i"),
+                'updated_at' => date("Y-m-d h:m:i"),
+            ],
+        ]);
     }
 }

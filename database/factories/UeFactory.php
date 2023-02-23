@@ -17,7 +17,7 @@ class UeFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nom' => $this->faker->text(15),
         ];
     }
 }
