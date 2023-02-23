@@ -1,22 +1,27 @@
 @extends('layouts.utilisateurs.master')
 
+{{-- 
+@section('bootstrap-integration')
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+@endsection  --}}
+
 @section('sous-contenu')
     <header>
-        <div id="info-card" class=" mx-auto w-full flex my-8 bg-gray-200 ">
+        <div id="info-card" class="mx-auto w-full flex my-6 bg-gray-200 ">
             <div class="info-content h-full w-full md:flex md:justify-around md:items-center  ">
                 <div class="info-content-left flex flex-col md:w-[60%] md:ml-8 justify-start items-start">
                     <div
-                        class="border-t-[2px] md:border-l-[6px] md:border-l-[#28AD81] md:border-t-[0px] md:my-8 px-2 w-full flex flex-col">
+                        class="border-t-[2px] rounded-t-md rounded-b-md md:border-l-[6px] md:border-l-[#28AD81] md:border-t-[0px] md:my-8 px-2 w-full flex flex-col">
                         <p class="opacity-60 font-bold text-xl ">Bienvenue sur </p>
                         <p class="tracking-[.1rem]"> <span class="text-[#28AD81] text-2xl font-bold">COUR</span><span
                                 class="opacity-60 text-2xl font-bold">SAL</span></p>
                         <p class="text-[.8rem] w-1/2 mt-4 mx-auto md:w-full font-bold opacity-60 ">
                             Gerons mieux nos salles et nos cours à ENEAM</p>
                     </div>
-                    <button
-                        class=" border mt-2 flex justify-center items-center rounded-[.6rem] px-4 py-1 text-white font-bold bg-[#28AD81] ">Consultez
+                    <a href="{{ route('emploi') }}"
+                        class=" border mt-2 flex justify-center items-center no-underline rounded-[.6rem] px-4 py-1 text-white font-bold bg-[#28AD81] ">Consultez
                         l'emploi du temps de la semaine
-                    </button>
+                </a>
                 </div>
 
                 <div class="flex justify-end w-[40%] items-end h-full">
@@ -86,5 +91,5 @@
             </tr>
         </table>
     </div>
-    
+
 @endsection

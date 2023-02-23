@@ -3,11 +3,39 @@
 @section('content')
     <div class="w-screen h-screen">
 
-        <header class="flex h-[10%] items-center border-b-2 justify-between">
+        <div class="bg-[#969696] text-white h-[25px] text-[12px] flex items-center flex-wrap border justify-between">
+            <div class="w-full md:w-[80%] pl-2 float-right mb-4">
+                <marquee scrolldelay="1000" scrollamount="200px">
+                    <b>
+                        Nos Valeurs: L’esprit d’équipe et d’engagement - L’excellence - Le partenariat - La
+                        reddition des
+                        comptes
+                    </b>
+                </marquee>
+            </div>
+            <ul class="md:w-[20%] w-full float-right flex font-bold text-[15px] mb-4">
+                <li class="px-4 border-r-2"><a href="" class="hover:text-white no-underline text-white">UAC</a></li>
+                <li class="px-4 border-r-2"><a href="" class="hover:text-white no-underline text-white">Webmail</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- End Header -->
+
+
+        <div class="flex md:flex-row flex-col items-center px-3 md:px-0 content-between">
+            <div class="md:w-1/2 flex w-full items-center pl-0 md:pl-14">
+                <img src="images/téléchargement1.png" class="h-[10%] md:h-[99px]" alt="">
+            </div>
+            <div class="md:w-1/2 flex w-full items-center justify-end">
+                <img src="images/uac4.png" class="h-[10%] md:h-[99px] w-[50%] md:w-[80%]" alt="">
+            </div>
+        </div>
+
+        <header class="flex h-[10%] items-center border-t-2 border-b-2 justify-between">
             <!-- Header -->
 
             <!-- Sub Header -->
-
 
             <div class=" w-1/4 flex ml-4 md:ml-0 items-center ">
                 <i class="fa-solid fa-bars opacity-60 mx-4 text-xl"></i>
@@ -30,22 +58,24 @@
                         <div class="flex w-full h-full flex-col justify-between items-between">
                             <div class="flex h-full w-full justify-between items-between flex-col">
                                 <div class="first-block">
-                                    <div class="tera border-b ">
+                                    <div class="tera border-b">
                                         <div class="   "><span
                                                 class="text-[#263685] flex justify-end text-2xl lg:hidden cursor-pointer"><i
                                                     id="close-icons" class="fa-solid fa-close " onclick=""></i></span>
                                         </div>
                                     </div>
 
-                                    <div class="tera-memb border-b my-2">
-                                        <h2 class=" text-center "><a href="{{ route('dashboard') }}"><i
+                                    <div class="tera-memb border-b my-2 pb-4">
+                                        <h2 class=" text-center "><a href="{{ route('dashboard') }}"
+                                                class="no-underline text-black hover:text-black"><i
                                                     class=" py-2 text-xl fa-solid fa-house-chimney opacity-60"></i>
                                                 <p class="text-xs opacity-60">Accueil</p>
                                             </a> </h2>
                                     </div>
-                                    <div class="portfolio my-2 border-b ">
+                                    <div class="portfolio my-2 border-b pb-4">
                                         <h2 class=" text-center">
-                                            <a href="{{ route('recherche_emploi') }}"><i
+                                            <a href="{{ route('recherche_emploi') }}"
+                                                class="no-underline text-black hover:text-black"><i
                                                     class=" py-2 text-xl fa-solid fa-calendar-days opacity-60"></i>
                                                 <p class="text-xs opacity-60">Emploi du temps</p>
                                             </a>
@@ -54,18 +84,21 @@
                                 </div>
 
                                 <div class="second-block">
-                                    <div class="tera-memb border-b my-2 ">
-                                        <h2 class=" text-center "><a href="#"><i
-                                                    class=" py-2 text-xl fa-solid fa-gear opacity-60"></i>
+                                    <div class="tera-memb border-b my-2 pb-4">
+                                        <h2 class=" text-center "><a href="{{ route('profile.edit') }}"
+                                                class="no-underline text-black hover:text-black"><i
+                                                    class="py-2 text-xl fa-solid fa-gear opacity-60 text-black"></i>
                                                 <p class="text-xs opacity-60 ">Parametres</p>
-                                            </a> </h2>
+                                            </a></h2>
                                     </div>
-                                    <div class="portfolio my-2 ">
+                                    <div class="portfolio my-2 pb-4">
                                         <h2 class=" text-center">
-                                            <a href="#"><i
-                                                    class=" py-2 text-xl fa-solid fa-right-from-bracket opacity-60"></i>
-                                                <p class="text-xs opacity-60">Se deconnecter</p>
-                                            </a>
+                                            <form action="{{ route('logout') }}" method="post">
+                                                <button><i
+                                                        class=" py-2 text-xl fa-solid fa-right-from-bracket opacity-60"></i>
+                                                    <p class="text-xs opacity-60">Se deconnecter</p>
+                                                </button>
+                                            </form>
                                         </h2>
                                     </div>
                                 </div>

@@ -56,7 +56,7 @@ Route::get('/dashboard', function () {
     return view('utilisateurs.home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/emploi', [EmploiController::class, 'index']);
+Route::get('/emploi', [EmploiController::class, 'index'])->name("emploi");
 
 /*Route::get('/connexion', [HomeController::class, 'connexion'])->name('connexion');*/
 

@@ -49,325 +49,305 @@
 @endsection
 
 @section('sous-contenu')
-    <div class="row">
-        <div class="container col-lg-6">
-            <h2 class="text_center" style="text-align: center;">Emploi du temps</h2>
 
-            <form action="" method="post">
-                <label for="salle">Choisissez la salle</label>
-                <select name="salle" id="salle" class="form-control mb-2">
-                    <option value="">D1</option>
-                    <option value="">D2</option>
-                    <option value="">D3</option>
-                </select>
-                <label for="filiere">Choisissez la filière</label>
-                <select name="filiere" id="filiere" class="form-control mb-2">
-                    <option value="">IG1</option>
-                    <option value="">IG2</option>
-                    <option value="">IG3</option>
-                </select>
-                <button id="btn_rechercher" type="submit" class="btn btn-success fo" style="margin-top: 10px;">
-                    Rechercher</button>
-            </form>
-        </div>
+    <div class="container col-lg-10 table-responsive mb-0">
 
-        <div class="container col-lg-10 table-responsive  mb-0">
+        <h2 class="text_center mt-1" style="text-align: center;">Emploi du temps</h2>
 
-            <table class="my_table mt-5 table table-bordered">
-                <thead>
-                    <tr id="my_table_hd">
-                        <th>
+        <table class="my_table mt-3 table table-bordered">
+            <thead>
+                <tr id="my_table_hd">
+                    <th>
 
-                            <div class="my_table_hd_elmt">Horaire</div>
-                        </th>
-                        <th>
-                            <div class="my_table_hd_elmt">Lundi</div>
-                        </th>
-                        <th>
-                            <div class="my_table_hd_elmt">Mardi</div>
-                        </th>
-                        <th>
-                            <div class="my_table_hd_elmt">Mercredi</div>
-                        </th>
-                        <th>
-                            <div class="my_table_hd_elmt">Jeudi</div>
-                        </th>
-                        <th>
-                            <div class="my_table_hd_elmt">Vendredi</div>
-                        </th>
+                        <div class="my_table_hd_elmt">Horaire</div>
+                    </th>
+                    <th>
+                        <div class="my_table_hd_elmt">Lundi</div>
+                    </th>
+                    <th>
+                        <div class="my_table_hd_elmt">Mardi</div>
+                    </th>
+                    <th>
+                        <div class="my_table_hd_elmt">Mercredi</div>
+                    </th>
+                    <th>
+                        <div class="my_table_hd_elmt">Jeudi</div>
+                    </th>
+                    <th>
+                        <div class="my_table_hd_elmt">Vendredi</div>
+                    </th>
 
-                    </tr>
-                </thead>
+                </tr>
+            </thead>
 
-                <tbody>
-                    <tr>
-                        <td>7h-8h</td>
-                        <td rowspan="3" class="cours-1" style="background-color: #4FA5E4;">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+            <tbody>
+                <tr>
+                    <td>7h-8h</td>
+                    <td rowspan="3" class="cours-1" style="background-color: #4FA5E4;">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
+                        </div>
+                    </td>
 
-                        <td rowspan="3" class="cours-1" style="background-color: #4FA5E4;">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                    <td rowspan="3" class="cours-1" style="background-color: #4FA5E4;">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                        <td rowspan="3" class="cours-1" style="background-color: #4FA5E4;">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                        </div>
+                    </td>
+                    <td rowspan="3" class="cours-1" style="background-color: #4FA5E4;">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                        <td rowspan="3" class="cours-1" style="background-color: #4FA5E4;">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                        </div>
+                    </td>
+                    <td rowspan="3" class="cours-1" style="background-color: #4FA5E4;">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                        <td rowspan="1"></td>
-                    </tr>
+                        </div>
+                    </td>
+                    <td rowspan="1"></td>
+                </tr>
 
-                    <tr>
+                <tr>
 
-                        <td>8h-9h</td>
-                        <td rowspan="5" class="cours-2">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                    <td>8h-9h</td>
+                    <td rowspan="5" class="cours-2">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                    </tr>
+                        </div>
+                    </td>
+                </tr>
 
-                    <tr>
-                        <td>9h-10h</td>
+                <tr>
+                    <td>9h-10h</td>
 
-                    </tr>
+                </tr>
 
-                    <tr>
-                        <td>10h-11h</td>
+                <tr>
+                    <td>10h-11h</td>
 
-                    </tr>
-                    <tr>
-                        <td>11h-12h</td>
+                </tr>
+                <tr>
+                    <td>11h-12h</td>
 
-                    </tr>
+                </tr>
 
-                    <tr>
-                        <td>12h-13h</td>
-                        <td rowspan="3" class="cours-1">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                <tr>
+                    <td>12h-13h</td>
+                    <td rowspan="3" class="cours-1">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
+                        </div>
+                    </td>
 
-                        <td rowspan="3" class="cours-1">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                    <td rowspan="3" class="cours-1">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                        <td rowspan="3" class="cours-1">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                        </div>
+                    </td>
+                    <td rowspan="3" class="cours-1">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                        <td rowspan="3" class="cours-1">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                        </div>
+                    </td>
+                    <td rowspan="3" class="cours-1">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
+                        </div>
+                    </td>
 
-                    </tr>
+                </tr>
 
-                    <tr>
-                        <td>13h-14</td>
+                <tr>
+                    <td>13h-14</td>
 
-                    </tr>
-                    <tr>
-                        <td>14h-15h</td>
+                </tr>
+                <tr>
+                    <td>14h-15h</td>
 
-                    </tr>
+                </tr>
 
 
-                    <tr>
-                        <td>15h-16h</td>
+                <tr>
+                    <td>15h-16h</td>
 
-                        <td rowspan="4" class="cours-2">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                    <td rowspan="4" class="cours-2">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                        <td rowspan="4" class="cours-2">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                        </div>
+                    </td>
+                    <td rowspan="4" class="cours-2">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                        <td rowspan="2" class="cours-1">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                        </div>
+                    </td>
+                    <td rowspan="2" class="cours-1">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
-                        <td rowspan="4" class="cours-2">
-                            <div class="container">
-                                <div class="row rounded-5">
-                                    <div class="row p-2 text-light m-0 fw-bold"
-                                        style="background-color: whitesmoke; color: black !important;">
+                        </div>
+                    </td>
+                    <td rowspan="4" class="cours-2">
+                        <div class="container">
+                            <div class="row rounded-5">
+                                <div class="row p-2 text-light m-0 fw-bold"
+                                    style="background-color: whitesmoke; color: black !important;">
 
-                                        IG3-ARI
-                                    </div>
-                                    <div class="row p-2 text-light m-0 fw-bold">
-                                        Ireep
-                                        Service réseaux
-                                        7h-10h
-                                    </div>
+                                    IG3-ARI
+                                </div>
+                                <div class="row p-2 text-light m-0 fw-bold">
+                                    Ireep
+                                    Service réseaux
+                                    7h-10h
                                 </div>
                             </div>
-                        </td>
+                        </div>
+                    </td>
 
-                    </tr>
-                    <tr>
-                        <td>16h-17h</td>
+                </tr>
+                <tr>
+                    <td>16h-17h</td>
 
-                    </tr>
-                    <tr>
-                        <td>17h-18h</td>
+                </tr>
+                <tr>
+                    <td>17h-18h</td>
 
-                    </tr>
-                    <tr>
-                        <td>18h-19h</td>
+                </tr>
+                <tr>
+                    <td>18h-19h</td>
 
-                    </tr>
+                </tr>
 
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
     </div>
 @endsection
