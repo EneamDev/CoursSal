@@ -11,10 +11,21 @@ class SalleController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
+     */ 
     public function index()
     {
-        //
+        return view("utilisateurs.salles.voirSalle");
+    }
+
+    /**
+     * Search a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */ 
+
+    public function search()
+    {
+        return view("utilisateurs.salles.rechercheSalleDispo");
     }
 
     /**

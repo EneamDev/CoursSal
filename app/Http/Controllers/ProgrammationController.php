@@ -15,6 +15,7 @@ class ProgrammationController extends Controller
     public function index()
     {
         //
+        return view("utilisateurs.programmations.editer");
     }
 
     /**

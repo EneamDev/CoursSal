@@ -14,7 +14,18 @@ class EmploiController extends Controller
     public function index()
     {
         //
-        return view("utilisateurs.emploi");
+        return view("utilisateurs.emploi_du_temps.emploi");
+    }
+
+    /**
+     * Search a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function search()
+    {
+        return view("utilisateurs.emploi_du_temps.rechercher_emploi");
     }
 
     /**

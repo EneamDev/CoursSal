@@ -25,10 +25,10 @@
 
         <div class="flex md:flex-row flex-col items-center px-3 md:px-0 content-between">
             <div class="md:w-1/2 flex w-full items-center pl-0 md:pl-14">
-                <img src="images/téléchargement1.png" class="h-[10%] md:h-[99px]" alt="">
+                <img src="{{ asset('Images/téléchargement1.png') }}" class="h-[10%] md:h-[99px]" alt="">
             </div>
             <div class="md:w-1/2 flex w-full items-center justify-end">
-                <img src="images/uac4.png" class="h-[10%] md:h-[99px] w-[50%] md:w-[80%]" alt="">
+                <img src="{{ asset('Images/uac4.png') }}" class="h-[10%] md:h-[99px] w-[50%] md:w-[80%]" alt="">
             </div>
         </div>
 
@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="portfolio my-2 border-b pb-4">
                                         <h2 class=" text-center">
-                                            <a href="{{ route('recherche_emploi') }}"
+                                            <a href="{{ route('recherche_emploi') }}" 
                                                 class="no-underline text-black hover:text-black"><i
                                                     class=" py-2 text-xl fa-solid fa-calendar-days opacity-60"></i>
                                                 <p class="text-xs opacity-60">Emploi du temps</p>

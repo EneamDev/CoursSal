@@ -10,8 +10,9 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    @vite('resources/css/app.css')
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/mohamed-seibou.css') }}">
+        @vite('resources/css/app.css')
 
     @yield('bootstrap-integration')
 

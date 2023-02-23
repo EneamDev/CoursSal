@@ -19,7 +19,7 @@
                             Gerons mieux nos salles et nos cours à ENEAM</p>
                     </div>
                     <a href="{{ route('emploi') }}"
-                        class=" border mt-2 flex justify-center items-center no-underline rounded-[.6rem] px-4 py-1 text-white font-bold bg-[#28AD81] ">Consultez
+                        class="border mt-2 flex justify-center items-center no-underline rounded-[.6rem] px-4 py-1 text-white font-bold bg-[#28AD81]">Consultez
                         l'emploi du temps de la semaine
                 </a>
                 </div>
@@ -43,7 +43,7 @@
     </p>
 
     <div class=" m-4 overflow-scroll lg:w-[80%] mb-8 lg:mx-auto ">
-        <table class="w-full border-collapse ">
+        <table class="w-full border-collapse">
             <tr class="">
                 <th class=" text-xs border-[#28AD81] text-white rounded-tl-[.4rem] ">Salles</th>
                 <th class=" text-xs border-[#28AD81] text-white">Heure d'occupation</th>
