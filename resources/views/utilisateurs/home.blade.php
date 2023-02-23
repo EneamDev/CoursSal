@@ -3,7 +3,7 @@
 @section('content')
     <div class="w-screen h-screen">
 
-        <header class="h-[10%] items-center border-b-2 justify-between">
+        <header class="flex h-[10%] items-center border-b-2 justify-between">
             <!-- Header -->
 
             <!-- Sub Header -->

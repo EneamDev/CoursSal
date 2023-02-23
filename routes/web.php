@@ -50,7 +50,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 Route::get('/dashboard', function () {
     return view('utilisateurs.home');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
 
 
 /*Route::get('/connexion', [HomeController::class, 'connexion'])->name('connexion');*/

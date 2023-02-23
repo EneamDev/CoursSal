@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('email');
             $table->integer('numero');
             $table->date('dateNaissance');
+            $table->foreign('filiere_id')
+                ->references('id')->on('filieres')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
