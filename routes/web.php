@@ -66,7 +66,7 @@ Route::middleware('auth')->group(function () {
 
 // Page de recherche d'emploi du temps
 
-Route::get("/recherche_emploi", [RechercherEmploiController::class, "index"]);
+Route::get("/recherche_emploi", [RechercherEmploiController::class, "index"])->name("recherche_emploi");
 //Appel du controller de connexion des Etudiants
 Route::post('/connexion', [HomeController::class, 'connexion'])->name('connexion')->middleware(['auth']);
 

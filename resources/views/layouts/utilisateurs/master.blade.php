@@ -38,14 +38,14 @@
                                     </div>
 
                                     <div class="tera-memb border-b my-2">
-                                        <h2 class=" text-center "><a href="#"><i
+                                        <h2 class=" text-center "><a href="{{ route('dashboard') }}"><i
                                                     class=" py-2 text-xl fa-solid fa-house-chimney opacity-60"></i>
                                                 <p class="text-xs opacity-60">Accueil</p>
                                             </a> </h2>
                                     </div>
                                     <div class="portfolio my-2 border-b ">
                                         <h2 class=" text-center">
-                                            <a href="#"><i
+                                            <a href="{{ route('recherche_emploi') }}"><i
                                                     class=" py-2 text-xl fa-solid fa-calendar-days opacity-60"></i>
                                                 <p class="text-xs opacity-60">Emploi du temps</p>
                                             </a>
