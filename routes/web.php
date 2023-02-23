@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticateController;
+use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RechercherEmploiController;
@@ -55,6 +56,7 @@ Route::get('/dashboard', function () {
     return view('utilisateurs.home');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/emploi', [EmploiController::class, 'index']);
 
 /*Route::get('/connexion', [HomeController::class, 'connexion'])->name('connexion');*/
 

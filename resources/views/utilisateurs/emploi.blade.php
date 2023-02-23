@@ -98,7 +98,7 @@
 
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     <tr>
                         <td>7h-8h</td>
@@ -168,7 +168,7 @@
                         </td>
                         <td rowspan="1"></td>
                     </tr>
-                    
+
                     <tr>
 
                         <td>8h-9h</td>
@@ -189,7 +189,7 @@
                             </div>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>9h-10h</td>
 

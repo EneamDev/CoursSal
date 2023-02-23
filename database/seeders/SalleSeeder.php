@@ -16,7 +16,7 @@ class SalleSeeder extends Seeder
      */
     public function run()
     {
-        //
+        // Salle seeder
         
         DB::table("salles")->insert([
             [
