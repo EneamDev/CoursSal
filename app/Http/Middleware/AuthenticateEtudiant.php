@@ -23,7 +23,7 @@ class AuthenticateEtudiant
     public function handle(Request $request, Closure $next)
     {
         if (!Auth::check()) {
-            return redirect('/login');
+            return redirect('/connexion');
         }
 
         return $next($request);
