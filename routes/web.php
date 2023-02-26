@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/login', [AuthenticateController::class, "index"]);
 
-Route::get("/", [HomeController::class, "index"]);
+Route::get("/", [HomeController::class, "index"])->name('index');
 
 Route::get('/admin', function () {
     return view('auth.login');
@@ -62,7 +62,7 @@ Route::middleware('auth')->group(function () {
 });
 
 //Appel du controller de connexion des Etudiants
-Route::post('/connexion', [HomeController::class, 'connexion'])->name('connexion')->middleware(['auth']);
+Route::get('/connexion', [HomeController::class, 'connexion'])->name('connexion')->middleware(['auth']);
 
 
 

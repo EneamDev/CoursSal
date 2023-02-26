@@ -20,7 +20,17 @@ return new class extends Migration
             $table->string('prenoms');
             $table->string('email');
             $table->integer('numero');
+            $table->string('password');
             $table->date('dateNaissance');
+            $table->foreignId('role_id')
+                ->references('id')->on('roles')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->foreignId('filiere_id')
+                ->references('id')->on('filieres')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

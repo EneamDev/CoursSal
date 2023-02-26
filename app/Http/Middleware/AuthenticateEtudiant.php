@@ -22,11 +22,21 @@ class AuthenticateEtudiant
 
     public function handle(Request $request, Closure $next)
     {
-        if (!Auth::check()) {
-            return redirect('/login');
+        /*  if (!Auth::check()) {
+             return redirect('/index');
+         }
+
+         return $next($request);*/
+
+        if(Auth::User())
+        {
+            return $next($request);
         }
 
-        return $next($request);
+        else{
+            return view('connexion');
+        }
+
     }
 
 }

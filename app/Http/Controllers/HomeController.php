@@ -84,19 +84,20 @@ class HomeController extends Controller
         //
     }
 
+
     //connexion étudiant
     public function connexion(Request $request)
     {
-        $matricule = $request->input('matricule');
+        $matricule = $request->matricule;
         $etudiant = Etudiant::where('matricule', $matricule)->first();
 
         if (!$etudiant) {
             return back()->withErrors(['matricule' => 'Matricule invalide.']);
         }
 
-        Auth::login($etudiant);
+        /*Auth::login($etudiant);*/
 
-        return redirect('/connexion');
+        return view('utilisateurs.home');
     }
 
 }

@@ -2,14 +2,19 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 /**
  * @property integer $id
  * @property integer $salle_id
+ * @property string $nom
  * @property string $created_at
  * @property string $updated_at
  * @property integer $effectif
+ * @property Etudiant[] $etudiants
  * @property Salle $salle
  * @property FilieresUe[] $filieresUes
  * @property Programmation[] $programmations
@@ -18,10 +23,19 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Filiere extends Model
 {
+    use HasApiTokens, HasFactory, Notifiable;
     /**
      * @var array
      */
-    protected $fillable = ['salle_id', 'created_at', 'updated_at', 'effectif'];
+    protected $fillable = ['salle_id', 'nom', 'created_at', 'updated_at', 'effectif'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function etudiants()
+    {
+        return $this->hasMany('App\Models\Etudiant');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

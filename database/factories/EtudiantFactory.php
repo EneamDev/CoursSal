@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Etudiant>
  */
-class UserFactory extends Factory
+class EtudiantFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,25 +18,18 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'name' => fake()->name(),
+            'matricule' => $this->faker->randomNumber(8),
+            'nom' => fake()->name(),
+            'prenoms' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
+            'numero' => $this->faker->randomNumber(8),
+            'dateNaissance' => $this->faker->dateTimeBetween('-30 years', 'now')->format('Y-m-d'),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'role_id' => 1,
             'filiere_id' => 1,
             'remember_token' => Str::random(10),
+            'created_at' => now(),
+            'updated_at' => now()
         ];
-    }
-
-    /**
-     * Indicate that the model's email address should be unverified.
-     *
-     * @return static
-     */
-    public function unverified()
-    {
-        return $this->state(fn (array $attributes) => [
-            'email_verified_at' => null,
-        ]);
     }
 }
