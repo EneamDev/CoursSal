@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Etudiant;
+use App\Models\Ecue;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class EcueController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view("authentifications.connexion");
+        //
     }
 
     /**
@@ -42,10 +41,10 @@ class HomeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Ecue  $ecue
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Ecue $ecue)
     {
         //
     }
@@ -53,10 +52,10 @@ class HomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Ecue  $ecue
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Ecue $ecue)
     {
         //
     }
@@ -65,10 +64,10 @@ class HomeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\Ecue  $ecue
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Ecue $ecue)
     {
         //
     }
@@ -76,27 +75,11 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Ecue  $ecue
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Ecue $ecue)
     {
         //
     }
-
-    //connexion étudiant
-    public function connexion(Request $request)
-    {
-        $matricule = $request->input('matricule');
-        $etudiant = Etudiant::where('matricule', $matricule)->first();
-
-        if (!$etudiant) {
-            return back()->withErrors(['matricule' => 'Matricule invalide.']);
-        }
-
-        // Auth::login($etudiant);
-
-        return view('utilisateurs.home');
-    }
-
 }

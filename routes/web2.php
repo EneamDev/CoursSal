@@ -1,12 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthenticateController;
-use App\Http\Controllers\EmploiController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProgrammationController;
-use App\Http\Controllers\RechercherEmploiController;
-use App\Http\Controllers\SalleController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use Illuminate\Support\Facades\Route;
 
@@ -23,11 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/login', [AuthenticateController::class, "index"]);
 
-// Page d'accueil
+Route::get("/", [HomeController::class, "index"])->name('index');
 
-Route::get("/home", [HomeController::class, "index"])->name('index');
-
-// Page d'administration
 Route::get('/admin', function () {
     return view('auth.login');
 });
@@ -54,18 +47,14 @@ Route::post('/email/verification-notification', function (Request $request) {
 })->middleware(['auth', 'throttle:6,1'])->name('verification.send');*/
 
 
-// Page d'accueil Dashboard
+
 Route::get('/dashboard', function () {
     return view('utilisateurs.home');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
 
-// Page des emplois du temps
-
-Route::get('/emploi', [EmploiController::class, 'index'])->name("emploi");
+// ->middleware(['auth', 'verified'])
 
 /*Route::get('/connexion', [HomeController::class, 'connexion'])->name('connexion');*/
-
-// Page de paramètre d'authentification
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -73,27 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-// Page de recherche d'emploi du temps
-
-Route::get('/recherche-filiere', [EmploiController::class, "search"])
-    ->prefix("emploi")
-    ->name('recherche_emploi');
-
-
 //Appel du controller de connexion des Etudiants
-Route::get('/connexion', [HomeController::class, 'connexion'])->name('connexion');//->middleware(['auth']);
+Route::get('/connexion', [HomeController::class, 'connexion'])->name('connexion')->middleware(['auth']);
 
-// Page pour rechercher des salles disponibles
-Route::get("/recherche", [SalleController::class, "search"])
-    ->prefix("/salle")
-    ->name("recherche_salle");
-
-// Page pour voir les salles 
-Route::get("voir", [SalleController::class, "index"])
-    ->prefix("/salle")
-    ->name("voir_salle");
-
-// Page de programmation
-Route::resource("programmation", ProgrammationController::class);
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
