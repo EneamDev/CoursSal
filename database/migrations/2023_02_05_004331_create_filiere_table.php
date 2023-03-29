@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('filieres', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nom');
             $table->unsignedBigInteger('effectif');
             $table->unsignedBigInteger('salle_id');
 

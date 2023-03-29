@@ -22,16 +22,18 @@ class Role extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function users()
-    {
-        return $this->hasMany('App\Models\User');
-    }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function utilisateurs()
+
+    public function user()
     {
-        return $this->hasMany('App\Models\Utilisateur');
+        return $this->hasMany(User::class);
+    }
+    public function etudiant()
+    {
+        return $this->hasMany(Etudiant::class);
     }
 }

@@ -74,10 +74,38 @@
                                     </div>
                                     <div class="portfolio my-2 ">
                                         <h2 class=" text-center">
-                                            <a href="#"><i
-                                                    class=" py-2 text-xl fa-solid fa-right-from-bracket opacity-60"></i>
+                                            @if(Auth::guard('etudiant')->check())
+                                           {{-- <a href="{{ route('etudiant.logout') }}"><i
+                                                    class=" py-2 text-xl fa-solid fa-right-from-bracket opacity-60"
+                                                    onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"></i>
                                                 <p class="text-xs opacity-60">Se deconnecter</p>
                                             </a>
+                                                <form id="logout-form" method="post" action="{{ route('etudiant.logout') }}">
+                                                    @csrf
+
+                                                </form>--}}
+                                                <a  href="{{ route('etudiant.logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    {{ __('Déconnexion') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('etudiant.logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                            @else
+
+                                                <a href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    {{ __('Déconnexion') }}
+                                                </a>
+
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                                    @csrf
+                                                </form>
+                                                @endif
                                         </h2>
                                     </div>
                                 </div>

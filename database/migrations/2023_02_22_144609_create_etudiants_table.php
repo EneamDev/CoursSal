@@ -18,9 +18,21 @@ return new class extends Migration
             $table->integer('matricule');
             $table->string('nom');
             $table->string('prenoms');
-            $table->string('email');
+            $table->string('email', 191)->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
             $table->integer('numero');
             $table->date('dateNaissance');
+            $table->unsignedBigInteger('role_id');
+            $table->unsignedBigInteger('filiere_id');
+            $table->foreign('role_id')
+                ->references('id')->on('roles')
+                ;
+            $table->foreign('filiere_id')
+                ->references('id')->on('filieres')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

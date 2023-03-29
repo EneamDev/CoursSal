@@ -21,9 +21,25 @@ class RedirectIfAuthenticated
     {
         $guards = empty($guards) ? [null] : $guards;
 
-        foreach ($guards as $guard) {
+      /*  foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
+            }
+        }*/
+
+        foreach ($guards as $guard) {
+            switch ($guard) {
+                case 'etudiant':
+                    if (Auth::guard($guard)->check()) {
+                        return redirect()->route('dashboard');
+                    }
+                    break;
+
+                default:
+                    if (Auth::guard($guard)->check()) {
+                        return redirect('dashboard');
+                    }
+                    break;
             }
         }
 

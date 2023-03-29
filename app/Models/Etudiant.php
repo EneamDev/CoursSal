@@ -2,7 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 /**
  * @property integer $id
@@ -15,10 +19,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $created_at
  * @property string $updated_at
  */
-class Etudiant extends Model
+class Etudiant extends Authenticatable
 {
     /**
      * @var array
      */
-    protected $fillable = ['matricule', 'nom', 'prenoms', 'email', 'numero', 'dateNaissance', 'created_at', 'updated_at'];
+
+    use HasApiTokens, HasFactory, Notifiable;
+
+    protected $fillable = ['role_id', 'filiere_id', 'matricule', 'nom', 'prenoms', 'email', 'numero',
+        'dateNaissance', 'created_at', 'updated_at'];
+
+    public function roles()
+    {
+        return $this->belongsTo(Role::class);
+    }
 }

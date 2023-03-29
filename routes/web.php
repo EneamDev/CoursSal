@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\Auth\EtudiantAuthController;
 use App\Http\Controllers\AuthenticateController;
+use App\Http\Controllers\EtudiantController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -19,11 +21,26 @@ use Illuminate\Support\Facades\Route;
 
 //Route::get('/login', [AuthenticateController::class, "index"]);
 
-Route::get("/", [HomeController::class, "index"]);
+/*Route::get("/", [HomeController::class, "index"]);*/
+
+
+Route::get('/', [EtudiantAuthController::class, 'showLoginForm']);
+Route::post('/etudiant/login', [EtudiantAuthController::class, 'login'])->name('etudiant.login');
+//Route::get('/etudiant/logout', [EtudiantAuthController::class, 'logout'])->name('etudiant.logout');
+Route::match(array('GET', 'POST'), '/etudiant/logout', [EtudiantAuthController::class, 'logout'])->name('etudiant.logout');
+
+
+
+Route::group(['middleware' => ['auth:etudiant']], function () {
+    Route::get('etudiant/dashboard', [EtudiantController::class, 'dashboard'])->name('etudiant.dashboard');
+});
+
 
 Route::get('/admin', function () {
     return view('auth.login');
 });
+
+
 
 
 /*//L’avis de vérification des e-mails
@@ -50,7 +67,7 @@ Route::post('/email/verification-notification', function (Request $request) {
 
 Route::get('/dashboard', function () {
     return view('utilisateurs.home');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('dashboard');
 
 
 /*Route::get('/connexion', [HomeController::class, 'connexion'])->name('connexion');*/
@@ -62,7 +79,7 @@ Route::middleware('auth')->group(function () {
 });
 
 //Appel du controller de connexion des Etudiants
-Route::post('/connexion', [HomeController::class, 'connexion'])->name('connexion')->middleware(['auth']);
+/*Route::post('/connexion', [HomeController::class, 'connexion'])->name('connexion')->middleware(['auth']);*/
 
 
 

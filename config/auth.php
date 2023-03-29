@@ -40,6 +40,22 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'api' => [
+            'driver' => 'token',
+            'provider' => 'users',
+            'hash' => false,
+        ],
+
+        // Etudiants guards
+        'etudiant' => [
+            'driver' => 'session',
+            'provider' => 'etudiants',
+        ],
+
+        'etudiant-api' => [
+            'driver' => 'token',
+            'provider' => 'etudiants',
+        ],
     ],
 
     /*
@@ -69,6 +85,11 @@ return [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
+        'etudiants' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Etudiant::class,
+        ],
     ],
 
     /*
@@ -89,6 +110,14 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+
+
+        'etudiants' => [
+            'provider' => 'etudiants',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,
