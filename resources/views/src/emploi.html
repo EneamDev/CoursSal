@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../dist/bootstrap.min.css" />
+
+    <!-- Fichier TailwindCSS -->
+    <link rel="stylesheet" href="../dist/output.css">
+
+    <!-- Fichier CSS ENEAM Site vitrine -->
+    <link rel="stylesheet" href="../dist/eneam-site.css">
+</head>
+
+<body>
+
+    <div class="w-screen h-screen">
+
+        <!-- Header -->
+
+        <!-- Sub Header -->
+
+        <div class="bg-[#969696] text-white text-[12px]">
+            <div class="flex items-center flex-row md:flex-col justify-between">
+                <div class="w-full md:w-[80%] pl-2 float-right">
+                    <marquee scrolldelay="800" scrollamount="200px">
+                        <b>
+                            Nos Valeurs: L’esprit d’équipe et d’engagement - L’excellence - Le partenariat - La
+                            reddition des
+                            comptes
+                        </b>
+                    </marquee>
+                </div>
+                <ul class="md:w-[20%] w-full float-right flex font-bold text-[15px]">
+                    <li class="px-4 border-r-2"><a href="" class="hover:text-white">UAC</a></li>
+                    <li class="px-4 border-r-2"><a href="" class="hover:text-white">Webmail</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- End Header -->
+
+
+        <div class="flex md:flex-row flex-col items-center px-3 md:px-0 content-between">
+            <div class="md:w-1/2 flex w-full items-center pl-0 md:pl-14">
+                <img src="images/téléchargement1.png" class="h-[10%] md:h-[99px]" alt="">
+            </div>
+            <div class="md:w-1/2 flex w-full items-center justify-end">
+                <img src="images/uac4.png" class="h-[10%] md:h-[99px] w-[50%] md:w-[80%]" alt="">
+            </div>
+        </div>
+
+
+        <h1 class="text-center font-bold mt-1">Voir les salles disponibles</h1>
+
+        <form action="#">
+
+            <div class="flex justify-between border">
+
+                <!-- Page horaire -->
+                <div class="w-1/2">
+                    <label for="plage_horaire" class="text-center">Choisir la plage horaire</label>
+                    <input type="text" value="18h - 19h" class="shadow-2xl border border-red-500 w-full">
+                </div>
+
+                <!-- Jour -->
+                <div class="w-1/2">
+                    <label for="jour" class="text-center">Choisir le jour</label>
+                    <select name="jour" id="jour">
+                        <option value="toute" class="focus:bg-[#28AD81]">Toute la semaine</option>
+                        <option value="lundi">Lundi</option>
+                        <option value="mardi">Mardi</option>
+                        <option value="mercredi">Mercredi</option>
+                        <option value="jeudi">Jeudi</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="flex justify-end">
+                <button type="submit" value="chercher" name="chercher"
+                    class="bg-[#28ad81] px-5 py-2 rounded focus:scale-125 text-white font-semibold">Chercher</button>
+            </div>
+
+        </form>
+
+
+        <!-- footer section starts  -->
+
+        <footer class="footer-customized">
+
+            <div class="box-container">
+
+                <div class="box">
+                    <h3>ENEAM </h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi, voluptatem.</p>
+                    <div class="share">
+                        <a href="#" class="fab fa-facebook-f"></a>
+                        <a href="#" class="fab fa-twitter"></a>
+                        <a href="#" class="fab fa-instagram"></a>
+                        <a href="#" class="fab fa-linkedin"></a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <h3>quick links</h3>
+                    <a href="home.html" class="link-customized">home</a>
+                    <a href="about.html" class="link-customized">about</a>
+                    <a href="courses.html" class="link-customized">courses</a>
+                    <a href="contact.html" class="link-customized">contact</a>
+                </div>
+
+                <div class="box">
+                    <h3>useful links</h3>
+                    <a href="#" class="link-customized">help center</a>
+                    <a href="#" class="link-customized">ask questions</a>
+                    <a href="#" class="link-customized">send feedback</a>
+                    <a href="#" class="link-customized">private policy</a>
+                    <a href="#" class="link-customized">terms of use</a>
+                </div>
+
+
+
+            </div>
+
+            <div class="credit"> created by | all rights reserved! | © 2022</div>
+        </footer>
+    </div>
+
+</body>
+
+</html>

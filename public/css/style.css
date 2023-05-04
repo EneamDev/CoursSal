@@ -1,0 +1,26 @@
+
+
+::-webkit-scrollbar  {
+    display: none;
+    }
+
+.shado{
+    box-shadow: 12rem 0rem rgba(0, 0, 0, 0.7);
+}
+td, th{
+    padding: 10px 25px;
+    text-align: center; 
+    font-weight: bold;
+
+}
+td{
+    border: 1px solid rgb(170, 169, 169);
+}
+
+th{
+background-color:#28AD81 ;
+
+}
+td{
+    font-size: .7rem;
+}
